@@ -1,0 +1,23 @@
+﻿@model IEnumerable<product> 
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var count =Model==null? 0:Model.Count();
+}
+<h1>购物车</h1>
+<span>@count</span>
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-bordered table-hover table-striped table-condensed">
+            <thead>
+                <tr>标题</tr>
+                <tr>简介</tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

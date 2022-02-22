@@ -1,0 +1,50 @@
+﻿@model catering.ModelDto.LoginUserDto 
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_CateringViewImports.cshtml";
+}
+
+
+
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <img src="~/img/sky.jpg" class="img-thumbnail" alt="..." />
+    </div>
+    <div class="col-md-4">
+        <form asp-action="Login" method="post" asp-route-ReturnUrl="@ViewBag.ReturnUrl">
+            <div class="form-group">
+                <label class="control-label">登录</label>
+            </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input type="password" asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label asp-for="RememberMe">
+                        <input asp-for="RememberMe" />
+                        @Html.DisplayNameFor(o => o.RememberMe)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="登录" class="btn btn-primary" />
+                <a asp-controller="Account" asp-action="Register">去注册</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

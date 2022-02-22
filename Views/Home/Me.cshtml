@@ -1,0 +1,60 @@
+﻿@model catering.Models.user
+
+@inject SignInManager<user> _signInManager
+@{
+    ViewData["Title"] = "Me";
+    Layout = "_CateringViewImports";
+
+}
+
+@if (_signInManager.IsSignedIn(User))
+{
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav list-unstyled">
+            <li class="nav-item">
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <button type="submit" class="nav-link btn btn-link">
+                        注销 @User.Identity.Name
+                    </button>
+                </form>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="col-md-7" style="background-color:antiquewhite">
+
+    </div>
+    <div class="col-md-offset-1 col-md-3" style="height:500px; border:dashed">
+        <button class="btn-info center-block">今日打卡</button>
+    </div>
+
+}
+else
+{
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav list-unstyled">
+
+            else
+            {
+            <li class="nav-item">
+                <a class="nav-link btn-lg" asp-controller="Account" asp-action="Register">注册</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-lg" asp-controller="Account" asp-action="Login">登录</a>
+            </li>
+            }
+        </ul>
+    </div>
+    
+
+}
+
+
+
+
+
+
+
+
